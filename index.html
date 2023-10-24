@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Sun Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .sky {
+            background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+            height: 100vh;
+            position: relative;
+            animation: dayNight 15s infinite alternate;
+        }
+
+        .sun {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at center, #FFD700, transparent);
+            border-radius: 50%;
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            animation: moveSun 15s infinite alternate;
+        }
+
+        @keyframes dayNight {
+            0% {
+                background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+            }
+            100% {
+                background: linear-gradient(to bottom, #000, #000);
+            }
+        }
+
+        @keyframes moveSun {
+            0% {
+                top: 20%;
+                left: 10%;
+            }
+            100% {
+                top: 80%;
+                left: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sky">
+        <div class="sun"></div>
+    </div>
+</body>
+</html>
